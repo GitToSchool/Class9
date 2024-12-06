@@ -1,0 +1,29 @@
+name: Super Linter
+
+on:
+    pull_request:
+      branches:
+
+        -main
+
+    push:
+      branches:
+
+        -main
+
+
+jobs:
+  super-linter:
+    runs-on: ubuntu-latest
+
+    steps: 
+      - name: Checkout repository
+
+      - uses: actions/checkout@v3
+
+      - name: Super Linter
+      - uses: github/super-linter@v5
+
+      env:
+          RUN_LOCAL: true
+          LANGUAGES: "html" # Only HTML files
